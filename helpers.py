@@ -15,8 +15,10 @@ def write_to_db(match,data):
                 INSERT INTO `post_get_request`.`new_table` (`last_name`, `first_name`) VALUES (%s,%s)
                 """
                 # for x in request:
-                cursor.execute(sql,(data['firstname'],data['lastname']))
+                cursor.execute(sql,(data['first_name'],data['last_name']))
             connection.commit()
+        except KeyError:
+            pass
         finally:
             connection.close()
 
