@@ -6,7 +6,7 @@ from renderer import render
 @address('about')
 def about_handler(request, conn, match=True, data={}):
     template = "about.html"
-    abc = render(template)
+    abc = render(template, {'this_is_variable': 'Бул өзгөрмөнүн ордуна барат'})
     resp = """\
     HTTP/1.1 200 OK
 
